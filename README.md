@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+## 1 Signature App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+replace the code in the App.js file with:
 
-## Available Scripts
+`import "./App.css";
+import SignatureApp from "./projects/01Signature-app/SignatureApp";
 
-In the project directory, you can run:
+function App() {
+return (
 
-### `npm start`
+<div className="App">
+<SignatureApp />
+</div>
+);
+}
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+export default App;
+`
+explanation:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The component imports React and useState hook from the React library, as well as a component called Title from a local file ./components/Title.
 
-### `npm test`
+Inside the component function, two state variables name and date are declared using the useState hook. The initial values for these states are set to "Signature" and "Date", respectively.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Two functions handelNameChange and handelDateChange are defined to handle changes in the input fields for name and date. These functions update the corresponding state variables (name and date) with the new values entered by the user.
 
-### `npm run build`
+An inline CSS style inputStyle is defined to style the input fields.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The background color of the body is set to #eee.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The component returns JSX code representing the UI of the signature application. It includes:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Two instances of the Title component, one for displaying the name and another for displaying the date. The text prop of the Title components is set to the name and date state variables, respectively.
+A paragraph element with some Lorem Ipsum text.
+A footer element containing two input fields: one for entering the date (type="date") and another for entering the name (type="text"). These input fields are bound to the date and name state variables, respectively, and trigger the handelDateChange and handelNameChange functions when their values change.
